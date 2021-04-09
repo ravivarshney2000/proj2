@@ -55,8 +55,9 @@ public class MyLL implements MySLinkList {
     }
 
     @Override
-    public int first() {
-        return 0;
+    public Node first() {
+        Node node=head;
+        return node;
     }
 
     @Override
@@ -88,6 +89,24 @@ public class MyLL implements MySLinkList {
     public void traverse(){
         if (head!=null){
             Node temp=head;
+            while (temp!=null)
+            {
+                System.out.print(temp.getData()+" ");
+                temp=temp.getNext();
+            }
+        }
+        System.out.println();
+    }
+
+    public void PrintSLLInReverse(Node n){
+        //Node n=head;
+        if(n==null){
+            return;
+        }
+
+        else{
+            PrintSLLInReverse(n.getNext());
+            System.out.print(n.getData()+" ");
         }
     }
 }
